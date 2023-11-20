@@ -1,0 +1,108 @@
+.App{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    
+    
+
+}
+.top-info{
+    display: flex;
+    
+}
+.fare-celc{
+
+}
+.fare-celc{
+    user-select: none;
+}
+.farenheight{
+    cursor: pointer;
+}
+.celcius{
+    cursor: pointer;
+}
+.top-left{
+    display: flex;  
+}
+.top-right{
+    margin-left: 220px; /*band aid solution*/
+}
+#searchpointer{
+    cursor: pointer;
+}
+
+#weather{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 40px;
+}
+#day{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+
+}
+#sun{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    color: gray;
+}
+.fare-celc{
+    display: flex;
+    font-size: 20px;
+    gap: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.deg-temp{
+    display: flex;
+}
+.top-degree{
+    font-size: 60px;
+    margin-left: 10px;
+}
+#humidity{
+    width: 100px;
+}
+.searchsvg{
+    display: flex;
+
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    
+     
+}
+.card{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.day{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.degrees{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+}
+.lower-info{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
