@@ -9,9 +9,8 @@ app.use(cors());
 
 app.get('/api/weather', async (req, res) => {///api/data
   try {
-    // Make an API call using axios
-  //  https://api.openweathermap.org/data/2.5/weather?q=paris&appid=05990d69407df4e39ffc08972a02188b
-  api; //https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}
+   
+  api; 
   
   const city = req.query.city;
     

@@ -30,17 +30,37 @@ const WeatherApp=()=>{
    //   console.log(response.data);
       const data = response.data;
       /* top left */
-      
+     
 
       document.getElementById('top-degree').innerHTML = `${Math.floor(data.forecast[0].temperature)}C°`;
       document.getElementById('sun').innerHTML = `${data.forecast[0].weatherDescription}`;
       document.getElementById('wind').innerHTML = "Wind: " + `${data.forecast[0].windSpeed}` + "mph";
       document.getElementById('humidity').innerHTML = `Humidity ${data.forecast[0].humidityCheck} %`;
-    
+      const topImageElement = document.getElementById('sep-img');
+      
       /*cards*/ 
       const cards = data.forecast.slice(0);
       cards.forEach((day,index)=>{
 
+        if (day.icon === "01d" || day.icon === "01n") {
+          topImageElement.src = sunny;
+        } else if (day.icon === "02d" || day.icon === "02n") {
+          topImageElement.src = sun_with_cloud;
+        } else if (day.icon === "03d" || day.icon === "03n") {
+          topImageElement.src = cloud;
+        } else if (day.icon === "04d" || day.icon === "04n") {
+          topImageElement.src = double_cloud;
+        } else if (day.icon === "09d" || day.icon === "09n") {
+          topImageElement.src = rain;
+        } else if (day.icon === "10d" || day.icon === "10n") {
+          topImageElement.src = rain_with_sun_cloud;
+        } else if (day.icon === "11d" || day.icon === "11n") {
+          topImageElement.src = thunder;
+        } else if (day.icon === "13d" || day.icon === "13n") {
+          topImageElement.src = snow;
+        } else if (day.icon === "50d" || day.icon === "50n") {
+          topImageElement.src = wind;
+        }
         
   
         const card = document.getElementById(`card-${index + 1}`);
@@ -51,7 +71,10 @@ const WeatherApp=()=>{
         
         const currentDayIndex = new Date().getDay();
        // console.log(currentDayIndex)
-        const currentDayImage = document.getElementById('sep-img');
+    
+
+     
+        
        
 
         //console.log(cards[index].icon);
@@ -77,6 +100,9 @@ const WeatherApp=()=>{
         }
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const currentDay= document.getElementById('day');
+        const cardDayIndex = (currentDayIndex + index + 1) % 7; // Ensure it wraps around if it goes beyond Saturday
+        currentDay.innerHTML = daysOfWeek[cardDayIndex];
+ 
        // console.log(imageElement.src)
        if (currentDayIndex === index+1) { 
          currentDay.innerHTML= daysOfWeek[currentDayIndex];
